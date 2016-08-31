@@ -1,0 +1,13 @@
+= Simple Example of Wildfly Swarm
+
+Example of Wildfly Swarm + Gradle
+
+== Build
+
+`./gradlew clean wildfly-swarm-package`
+
+== Run
+
+`java -jar ./build/libs/example-gradle-swarm.jar`
+
+Running on port `8181`

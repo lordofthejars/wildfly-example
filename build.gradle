@@ -1,0 +1,41 @@
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:0.6.0.RELEASE"
+        classpath "org.wildfly.swarm:wildfly-swarm-plugin:2016.8.1"
+    }
+}
+
+apply plugin: "io.spring.dependency-management"
+apply plugin: 'wildfly-swarm'
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'org.example.wildfly.Main'
+
+swarm {
+    properties {
+        swarm.http.port = 8181
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://maven.repository.redhat.com/nexus/content/repositories/thirdparty-releases/'
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.wildfly.swarm:bom-all:2016.8.1"
+    }
+}
+
+dependencies {
+    compile "org.wildfly.swarm:jaxrs"
+}
