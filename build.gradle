@@ -33,9 +33,13 @@ repositories {
 dependencyManagement {
     imports {
         mavenBom "org.wildfly.swarm:bom-all:2016.8.1"
+        mavenBom "org.jboss.arquillian:arquillian-bom:1.1.10.Final"
     }
 }
 
 dependencies {
     compile "org.wildfly.swarm:jaxrs"
+    testCompile "org.wildfly.swarm:arquillian"
+    testCompile "org.jboss.arquillian.junit:arquillian-junit-container"
+    testCompile "io.rest-assured:rest-assured:3.0.0"
 }
