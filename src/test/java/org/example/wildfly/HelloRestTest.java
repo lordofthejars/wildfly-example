@@ -1,6 +1,5 @@
 package org.example.wildfly;
 
-import io.restassured.RestAssured;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
@@ -25,7 +24,6 @@ public class HelloRestTest {
 
     @Test
     public void shouldReturnHelloWorld() {
-        RestAssured.port = 8181;
         get().then().body(is("Hello World From JavaZone 2016"));
     }
 
