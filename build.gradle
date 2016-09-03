@@ -24,6 +24,7 @@ swarm {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven {
         url 'https://maven.repository.redhat.com/nexus/content/repositories/thirdparty-releases/'
