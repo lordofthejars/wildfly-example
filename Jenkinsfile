@@ -1,9 +1,9 @@
 node {
 
-    def gradle = load 'jenkins/gradle.groovy'
-
    stage 'Checkout'
    checkout scm
+
+   def gradle = load 'jenkins/gradle.groovy'
 
    stage 'Build'
    gradle.cleanAndCompile()
