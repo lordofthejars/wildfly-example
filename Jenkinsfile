@@ -1,6 +1,8 @@
-def gradle = load 'jenkins/gradle.groovy'
 
+def gradle;
 node {
+   gradle = load 'jenkins/gradle.groovy'
+
    stage 'Checkout'
    checkout scm
 
