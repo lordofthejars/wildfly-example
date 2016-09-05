@@ -15,7 +15,7 @@ node {
    }
 
    stage ('Create Artifacts') {
-     gradle.assembleApplication()
+     gradle.run('wildfly-swarm-package')
      docker.build("app/wildflyexample:${env.BUILD_NUMBER}")
    }
 
