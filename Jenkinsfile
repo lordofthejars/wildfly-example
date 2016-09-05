@@ -14,4 +14,9 @@ node {
      gradle.test()
    }
 
+   stage ('Create Artifacts') {
+     gradle.assembleApplication()
+     docker.build("app/wildflyexample:${env.BUILD_NUMBER}"
+   }
+
 }
