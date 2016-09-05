@@ -16,7 +16,7 @@ node {
 
    stage ('Create Artifacts') {
      gradle.assembleApplication()
-     docker.build("app/wildflyexample:${env.BUILD_NUMBER}"
+     docker.build("app/wildflyexample:${env.BUILD_NUMBER}")
    }
 
 }
