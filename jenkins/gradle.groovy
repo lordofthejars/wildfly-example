@@ -23,7 +23,7 @@ def aggregateJaCoCoReports(String switches = null) {
 }
 
 def assembleApplication(String switches = null) {
-    run 'assemble', switches
+    run 'wildfly-swarm-package', switches
 }
 
 def publishApplication(String switches = null) {
