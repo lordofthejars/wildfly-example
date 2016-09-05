@@ -12,6 +12,7 @@ node {
 
    stage ('Integration Tests') {
      gradle.test()
+     junit '**/build/test-results/*.xml'
    }
 
    stage ('Create Artifacts') {
