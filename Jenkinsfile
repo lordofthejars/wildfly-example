@@ -1,16 +1,16 @@
 node {
 
-   stage 'Checkout' {
+   stage('Checkout') {
     checkout scm
    }
 
    def gradle = load 'jenkins/gradle.groovy'
 
-   stage 'Build' {
+   stage ('Build') {
      gradle.cleanAndCompile()
    }
 
-   stage 'Integration Tests' {
+   stage ('Integration Tests') {
      gradle.test()
    }
 
